@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 2", "Lab 2\Lab 2.csproj", "{806AC8F0-6A43-4ECF-B90D-70B2E8C85A92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstructurasLineales", "..\P1\EstructurasLineales\EstructurasLineales.csproj", "{9DA37CFC-C181-41A6-BB5D-01565183922B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstructurasLineales", "EstructurasLineales\EstructurasLineales.csproj", "{9DA37CFC-C181-41A6-BB5D-01565183922B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,5 @@
+C:\Users\Mario\Desktop\P1\EstructurasLineales\bin\Debug\EstructurasLineales.dll
+C:\Users\Mario\Desktop\P1\EstructurasLineales\bin\Debug\EstructurasLineales.pdb
+C:\Users\Mario\Desktop\P1\EstructurasLineales\obj\Debug\EstructurasLineales.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Desktop\P1\EstructurasLineales\obj\Debug\EstructurasLineales.dll
+C:\Users\Mario\Desktop\P1\EstructurasLineales\obj\Debug\EstructurasLineales.pdb
