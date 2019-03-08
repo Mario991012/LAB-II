@@ -16,37 +16,42 @@ namespace EstructurasLineales
             Raiz = null;
         }
 
-        public void Insertar (T valor)
+        public void InsertarRaiz (T valor, Nodo<T> tmp)
         {
-            //Nodo Raiz auxiliar para no modificar la raiz del arbol
-            var RaizAux = Raiz;
-            //Creando el nodo con su respectivo valor
-            var Nodo = new Nodo<T>(valor);
-
+            //Nodo tmp que sirve como parametro para agregar al arbol
+  
             //Si el arbol esta vacio 
             if(Raiz == null)
             {
-                Raiz = Nodo;
-                Nodo.Valor = valor;
-                Nodo.posicion = 0;
+                Raiz = tmp;
+                tmp.Valor = valor;
+                tmp.posicion = 0;
             }
-            //Si el valor a insertar es mayor a la raiz
-            else if (Nodo.Valor.CompareTo(RaizAux.Valor) > 0)
-            {   
-                RaizAux.Derecha = Raiz;
-                Insertar(valor);
-            }
-            //Si el valor a insertar es menor a la raiz
-            else if (Nodo.Valor.CompareTo(RaizAux.Valor) < 0)
+            else
             {
-                RaizAux.Izquierda = Raiz;
-                Insertar(valor);
+                AgregandoHojas(valor, Raiz, tmp);
             }
-            //Si el valor a insertar es igual a la raiz
-            else if (Nodo.Valor.CompareTo(RaizAux.Valor) == 0)
+          
+        }
+
+        public void AgregandoHojas(T valor, Nodo<T>papa, Nodo<T> hijo)
+        {
+            if (papa.Valor.CompareTo(hijo.Valor) > 0)//Si el nodo a agregar es mayor que la raiz
             {
-                throw new NotImplementedException();
+                if (papa.Derecha == null) { hijo = papa.Derecha; }
+                else { AgregandoHojas(valor, papa.Derecha, hijo); }
             }
+
+            else if (papa.Valor.CompareTo(hijo.Valor) < 0)//Si el nodo a agregar es menor que la raiz
+            {
+                if (papa.Izquierda == null) { hijo = papa.Izquierda; }
+                else { AgregandoHojas(valor, papa.Izquierda, hijo); }
+            }
+            else if (papa.Valor.CompareTo(hijo.Valor) == 0)
+            {
+                throw new DuplicateWaitObjectException("Duplicate objects are not allowed");
+            }
+            
         }
 
         public IEnumerator<T> GetEnumerator()
@@ -64,6 +69,9 @@ namespace EstructurasLineales
             return GetEnumerator();
         }
 
-         
+        public void Agregar(T valor)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
