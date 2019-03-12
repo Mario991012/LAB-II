@@ -21,7 +21,7 @@ namespace EstructurasLineales
         public int posicion { get; set; } //Id del farmaco
         public T valor { get; set; }//Nombre del farmaco
 
-        void Inicializar(T value) //Metodo constructor
+        public  Nodo (T value) //Metodo constructor
         {
             this.Derecha = null;
             this.Izquierda = null;
