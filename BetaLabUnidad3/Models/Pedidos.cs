@@ -19,7 +19,8 @@ namespace BetaLabUnidad3.Models
         [DisplayName("Total a despachar")]
         public double total { get; set; }
 
-
+        public List<Med> nuevo = new List<Med>(); 
+        //Lista de pedidos
         public void AgregarALista(Med medicamento)
         {
             DataAlmacenada.Instancia.ListaMed.Add(medicamento); //
