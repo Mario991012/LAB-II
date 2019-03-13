@@ -1,19 +1,14 @@
 ﻿@model IEnumerable<BetaLabUnidad3.Models.Med>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "AgregarMed";
 }
 
-<h2>Lista de Medicamentos</h2>
+<h2>Agregar Medicamentos</h2>
 
-<p>
-    @Html.ActionLink("Crear Pedido", "Create")
-</p>
+
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.id)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
         </th>
@@ -29,14 +24,14 @@
         <th>
             @Html.DisplayNameFor(model => model.existencia)
         </th>
+        <th>
+            <p>Cantidad a comprar (Agregue cantidad de cada farmaco)</p>
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
@@ -51,6 +46,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.existencia)
+        </td>
+        <td>
+            <input type="text" value="0" id="MedAgregado" />
         </td>
     </tr>
 }

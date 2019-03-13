@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BetaLabUnidad3.Models;
+using BetaLabUnidad3.Singleton;
 
 namespace BetaLabUnidad3.Controllers
 {
@@ -14,26 +16,51 @@ namespace BetaLabUnidad3.Controllers
             return View();
         }
 
-        // GET: Pedidos/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: Pedidos/Create
-        public ActionResult Create()
+        public ActionResult CrearPedido()
         {
             return View();
         }
 
         // POST: Pedidos/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult CrearPedido(Pedidos pedido)
+        {
+            try
+            {
+                //var Nuevo = new Pedidos();
+                //Nuevo.ClientName = collection["ClientName"];
+                //Nuevo.nit = collection["nit"];
+                //Nuevo.direccion = collection["direccion"];
+
+                if(string.IsNullOrEmpty(pedido.ClientName) || string.IsNullOrEmpty(pedido.direccion) || string.IsNullOrEmpty(pedido.nit))
+                {
+                    ViewBag.Error = "Se necesita llenar todos los campos vacios";
+                    return View(pedido);
+                }
+                DataAlmacenada.Instancia.ListaPedidos.Add(pedido);
+                return RedirectToAction("AgregarMed");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+        // GET: Pedidos/AgregarMed
+        public ActionResult AgregarMed()
+        {
+            return View(DataAlmacenada.Instancia.ListaMed);
+        }
+
+        // POST: Pedidos/Create
+        [HttpPost]
+        public ActionResult AgregarMed(FormCollection collection)
         {
             try
             {
                 // TODO: Add insert logic here
-
                 return RedirectToAction("Index");
             }
             catch

@@ -13,19 +13,15 @@ namespace BetaLabUnidad3.Controllers
         // GET: Med
         public ActionResult Index()
         {
+            DataAlmacenada.Instancia.LecturaArchivo();
             return View(DataAlmacenada.Instancia.ListaMed); //Cargamos la lista 
         }
 
-        // GET: Med/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
         // GET: Med/Create
         public ActionResult Create()
         {
-            return View();
+            return RedirectToAction("CrearPedido", "Pedidos");
         }
 
         // POST: Med/Create
@@ -34,9 +30,7 @@ namespace BetaLabUnidad3.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                return RedirectToAction("CrearPedido", "Pedidos");
             }
             catch
             {
@@ -50,42 +44,6 @@ namespace BetaLabUnidad3.Controllers
             return View();
         }
 
-        // POST: Med/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Med/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Med/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

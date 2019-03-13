@@ -11,7 +11,7 @@ namespace BetaLabUnidad3.Models
     public class Med : IComparable
     {
         [DisplayName("ID")]
-        public string id { get; set; }
+        public int id { get; set; }
         [DisplayName("Nombre de Medicamento")]
         public string Nombre { get; set; }
         [DisplayName("Descripcion")]
@@ -19,7 +19,7 @@ namespace BetaLabUnidad3.Models
         [DisplayName("Casa Medica")]
         public string casa { get; set; }
         [DisplayName("Precio de Medicamento")]
-        public double precio { get; set; }
+        public string precio { get; set; }
         [DisplayName("En existencia")]
         public int existencia { get; set; }
 
